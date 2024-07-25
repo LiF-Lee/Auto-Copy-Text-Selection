@@ -1,5 +1,5 @@
 chrome.storage.sync.get('toggle', (data) => {
-    let isEnabled = data.toggle !== undefined ? data.toggle : true;
+    let isEnabled = data.toggle !== undefined ? data.toggle : false;
     let lastRightClickTime = 0;
 
     function copyToClipboard() {
@@ -39,7 +39,7 @@ chrome.storage.sync.get('toggle', (data) => {
             style.id = 'selection-style';
             document.head.appendChild(style);
         }
-        style.innerHTML = `::selection { background: yellow; }`;
+        style.innerHTML = `::selection { color: black; background: yellow; }`;
     }
 
     function removeSelectionStyle() {
